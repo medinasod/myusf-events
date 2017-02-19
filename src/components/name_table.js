@@ -5,18 +5,19 @@ class NameTable extends Component {
 
   render() {
     const rows = [];
-    this.props.products.forEach((product) => {
-      if (product.name.indexOf(this.props.filterText) === -1 ||
-      (product.female && !this.props.isFemaleOnly)) { // Not female.
+
+    this.props.events.forEach((event) => {
+      if (event.EventTitle.search(new RegExp(this.props.filterText, 'i')) === -1 ||
+      (event.female && !this.props.isFemaleOnly)) { // Not female.
         return;
       }
-      if (product.name.indexOf(this.props.filterText) === -1 ||
-      (product.male && !this.props.isMaleOnly)) { // Not male.
+      if (event.EventTitle.search(new RegExp(this.props.filterText, 'i')) === -1 ||
+      (event.male && !this.props.isMaleOnly)) { // Not male.
         return;
       }
       rows.push(<NameRow
-        product={product}
-        key={product.name}
+        event={event}
+        key={event.EventTitle}
         changedLastName={this.props.changedLastName}
       />);
     });
@@ -24,8 +25,8 @@ class NameTable extends Component {
       <table>
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Event</th>
+            <th>Date</th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
