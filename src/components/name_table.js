@@ -5,8 +5,9 @@ class NameTable extends Component {
 
   render() {
     const rows = [];
+    const eventSet = this.props.events.slice(0, 10);
 
-    this.props.events.forEach((event) => {
+    eventSet.forEach((event) => {
       if (event.EventTitle.search(new RegExp(this.props.filterText, 'i')) === -1 ||
       (event.female && !this.props.isFemaleOnly)) { // Not female.
         return;
