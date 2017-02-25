@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import NameRow from './name_row';
+import Pager from './pager';
 
 class NameTable extends Component {
 
   render() {
     const rows = [];
-    const eventSet = this.props.events.slice(0, 10);
+    const eventsList = this.props.events;
 
-    eventSet.forEach((event) => {
+    // eventsList = this.props.events.slice(0, numberPerPage);
+    eventsList.forEach((event) => {
       if (event.EventTitle.search(new RegExp(this.props.filterText, 'i')) === -1 ||
       (event.female && !this.props.isFemaleOnly)) { // Not female.
         return;
@@ -23,6 +25,7 @@ class NameTable extends Component {
       />);
     });
     return (
+      <div>
       <table>
         <thead>
           <tr>
@@ -32,6 +35,10 @@ class NameTable extends Component {
         </thead>
         <tbody>{rows}</tbody>
       </table>
+      <Pager
+        eventsList={eventsList}
+      />
+    </div>
     );
   }
 }
