@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NameRow from './name_row';
-import Pager from './pager';
 
 class NameTable extends Component {
 
@@ -35,9 +34,6 @@ class NameTable extends Component {
         </thead>
         <tbody>{rows}</tbody>
       </table>
-      <Pager
-        eventsList={eventsList}
-      />
     </div>
     );
   }

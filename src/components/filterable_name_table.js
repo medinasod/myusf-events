@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchBar from './search_bar';
 import NameTable from './name_table';
+import Pager from './pager';
 
 class FilterableNameTable extends Component {
   constructor(props) {
@@ -37,6 +38,7 @@ class FilterableNameTable extends Component {
           isFemaleOnly={this.state.isFemaleOnly}
           isMaleOnly={this.state.isMaleOnly}
         />
+        <Pager events={this.props.events} />
       </div>
     );
   }

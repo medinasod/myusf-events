@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class Pager extends Component {
 
   render() {
-    const eventsList = this.props.eventsList;
+    const eventsList = this.props.events;
     const numberPerPage = 5;
     const numberedButtons = [];
+    // const pageList = [];
     // let currentPage = 1;
     // const numberOfPages = 1;   // calculates the total number of pages
 
@@ -30,11 +31,27 @@ class Pager extends Component {
 
     let pages = getNumberOfPages();
     let pageNumber = 0;
+
+    // this.changePage = this.changePage.bind(this);
+    //
+    // // Handle the pager clicks.
+    // const changePage = (num) => {
+    //   currentPage = num;
+    //   let begin = ((currentPage - 1) * numberPerPage);
+    //   let end = begin + numberPerPage;
+    //
+    // };
+
     // Build numbered buttons.
     while (pages > 0) {
       pages--;
       ++pageNumber;
-      numberedButtons.push(<td><button>{pageNumber}</button></td>);
+      numberedButtons.push(
+        <td key={pageNumber}>
+          <button>
+            {pageNumber}
+          </button>
+        </td>);
     }
 
 
