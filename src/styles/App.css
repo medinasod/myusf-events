@@ -9,3 +9,12 @@ input { font-size: 14px;margin-top: 5px; padding:3px; }
 .checkboxes { font-size: 13px; }
 .checkbox { margin-left: 0px;margin-right:2px }
 .checkbox:nth-child(2) {margin-left: 10px;}
+.flex-container {
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin-left: 15px;
+}
+.flex-item {
+  margin:1em;
+}

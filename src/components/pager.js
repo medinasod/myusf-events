@@ -47,22 +47,14 @@ class Pager extends Component {
       pages--;
       ++pageNumber;
       numberedButtons.push(
-        <td key={pageNumber}>
-          <button>
+          <button className="flex-item" key={pageNumber}>
             {pageNumber}
-          </button>
-        </td>);
+          </button>);
     }
 
 
     return (
-      <table>
-        <tbody>
-          <tr>
-            {numberedButtons}
-          </tr>
-        </tbody>
-      </table>
+      <div className="flex-container">{numberedButtons}</div>
     );
   }
 }
