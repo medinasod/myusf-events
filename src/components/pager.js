@@ -10,6 +10,7 @@ class Pager extends Component {
     // let currentPage = 1;
     // const numberOfPages = 1;   // calculates the total number of pages
 
+    // Get the number of pages based on the number of events in eventList.
     const getNumberOfPages = () => Math.ceil(eventsList.length / numberPerPage);
     // const nextPage = () => {
     //     currentPage += 1;
